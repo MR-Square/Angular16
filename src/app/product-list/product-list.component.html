@@ -10,3 +10,6 @@
 <p>Discount: {{ getDiscountedPrice().toFixed(2) }}</p> <!-- calling a method using string interpolation -->
 <!-- .toFixed() is used to defined no. of digits can shown after decimal -->
 <p>{{product.inStock > 0 ? 'Only ' + product.inStock + ' items left' : 'Not in Stock'}}</p> <!-- ternary operator -->
+
+<!-- Example of property binding -->
+<button [disabled]="!(product.inStock)" >Buy Now</button>
