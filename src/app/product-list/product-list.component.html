@@ -1,0 +1,12 @@
+<!-- Example of string interpolation (data is comming from componet to template) -->
+<!-- <p>Name: {{ name }}</p>
+<p>Price: ${{ price }}</p>
+<p>Color: {{ color }}</p> -->
+
+<!-- Example of String interpolation -->
+<p>Name: {{ product.name }}</p>
+<p>Price: {{ '$' + product.price }}</p> <!-- string concatination -->
+<p>Color: {{ product.color }}</p>
+<p>Discount: {{ getDiscountedPrice().toFixed(2) }}</p> <!-- calling a method using string interpolation -->
+<!-- .toFixed() is used to defined no. of digits can shown after decimal -->
+<p>{{product.inStock > 0 ? 'Only ' + product.inStock + ' items left' : 'Not in Stock'}}</p> <!-- ternary operator -->

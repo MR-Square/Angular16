@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   // HTML TAG SELECTION
-  // selector: 'top-header',
+  selector: 'top-header',
   // HTML ATTRIBUTE SELECTOR
   // selector: '[top-header]',
   // CSS CLASSS SELECTOR
-  selector: '.top-header',
+  // selector: '.top-header',
   standalone: true,
   imports: [],
   templateUrl: './top-header.component.html',
