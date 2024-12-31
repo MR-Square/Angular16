@@ -1,0 +1,13 @@
+<div class="ekart--search--product">
+    <!-- bad practice -->
+    <!-- <input class="ekart-search-product-input" [value]="searchText" (input)="searchItem($event)"> -->
+    <!-- property binding, event binding -->
+
+    <!-- good practice -->
+    <input class="ekart-search-product-input" [(ngModel)]="searchText">
+    <!-- two way data binding -->
+    <button class="btn btn-search">Search</button>
+</div>
+<div class="ekart-search-result-for">
+    <p><strong>Search result for:</strong> {{ searchText }} </p> <!-- string interpolation -->
+</div>

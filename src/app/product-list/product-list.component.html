@@ -5,12 +5,12 @@
 
 <div class="ekart--product--container">
     <!-- Example of String interpolation -->
-    <p>Name: {{ product.name }}</p>
-    <p>Price: {{ '$' + product.price }}</p> <!-- string concatination -->
-    <p>Color: {{ product.color }}</p>
-    <p>Discount: {{ getDiscountedPrice().toFixed(2) }}</p> <!-- calling a method using string interpolation -->
+    <!-- <p>Name: {{ product.name }}</p> -->
+    <!-- <p>Price: {{ '$' + product.price }}</p>  --> <!-- string concatination -->
+    <!-- <p>Color: {{ product.color }}</p> -->
+    <!-- <p>Discount: {{ getDiscountedPrice().toFixed(2) }}</p> calling a method using string interpolation -->
     <!-- .toFixed() is used to defined no. of digits can shown after decimal -->
-    <p>{{product.inStock > 0 ? 'Only ' + product.inStock + ' items left' : 'Not in Stock'}}</p>
+    <!-- <p>{{product.inStock > 0 ? 'Only ' + product.inStock + ' items left' : 'Not in Stock'}}</p> -->
     <!-- ternary operator -->
 
     <!-- Example of property binding -->
@@ -19,8 +19,10 @@
     <!-- Example of event binding -->
     <!-- <input (input)="onNameChange($event)"> -->
 
-    <button (click)="removeItemFromCart()" [disabled]="!(addToCart)">-</button>
+    <!-- <button (click)="removeItemFromCart()" [disabled]="!(addToCart)">-</button> -->
     <!-- Here we are using both event binding (click) and property binding (disabled). -->
-    <span>{{ addToCart }}</span>
-    <button (click)="addItemToCart()" [disabled]="(addToCart === product.inStock)">+</button>
+    <!-- <span>{{ addToCart }}</span> -->
+    <!-- <button (click)="addItemToCart()" [disabled]="(addToCart === product.inStock)">+</button> -->
+
+    <app-search></app-search>
 </div>

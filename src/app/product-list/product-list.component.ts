@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { SearchComponent } from "./search/search.component";
 
 @Component({
   selector: 'product-list',
   standalone: true,
-  imports: [],
+  imports: [SearchComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
