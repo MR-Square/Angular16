@@ -11,6 +11,7 @@ export class ProductListComponent {
   name: string = 'iPhone 14';
   price: number = 999;
   color: string = 'Deep Purple';
+  addToCart: number = 0;
 
   // Defining an object
   product = {
@@ -25,5 +26,21 @@ export class ProductListComponent {
     return (
       this.product.price - (this.product.price * this.product.discount) / 100
     );
+  }
+
+  onNameChange(event: any) {
+    this.name = event.target.value;
+  }
+
+  addItemToCart() {
+    if (this.addToCart < this.product.inStock) {
+      this.addToCart = this.addToCart + 1;
+    }
+  }
+
+  removeItemFromCart() {
+    if (this.addToCart > 0) {
+      this.addToCart--;
+    }
   }
 }
