@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { SearchComponent } from "./search/search.component";
+import { SearchComponent } from './search/search.component';
 import { NgFor } from '@angular/common';
+import { ProductListComponent } from "./product-list/product-list.component";
 
 @Component({
-  selector: 'product-list',
+  selector: 'app-container',
   standalone: true,
-  imports: [SearchComponent,NgFor],
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css',
+  imports: [SearchComponent, ProductListComponent],
+  templateUrl: './container.component.html',
+  styleUrl: './container.component.css',
 })
-export class ProductListComponent {
+export class ContainerComponent {
   name: string = 'iPhone 14';
   price: number = 999;
   color: string = 'Deep Purple';
