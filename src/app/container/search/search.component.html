@@ -9,5 +9,8 @@
     <button class="btn btn-search">Search</button>
 </div>
 <div class="ekart-search-result-for">
-    <p><strong>Search result for:</strong> {{ searchText }} </p> <!-- string interpolation -->
+    <!-- Example of structural directive(ngIf) -->
+    <p *ngIf="searchText">
+        <strong>Search result for:</strong> {{ searchText }} <!-- string interpolation -->
+    </p>
 </div>

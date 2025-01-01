@@ -5,7 +5,11 @@
             <div class="ekart--add--to--wishlist">
                 <i class="fa fa-heart-o" aria-hidden="true"></i>
             </div>
-            <!-- <div class="ekart-on-sale-tag">75% OFF</div> -->
+            <!-- Example of structural directive(ngIf) -->
+            <div class="ekart-on-sale-tag" *ngIf="prod.discountPrice">{{ (100 - prod.discountPrice / prod.price *
+                100).toFixed(0) }}%
+                OFF
+            </div>
         </div>
         <div class="ekart--product--image">
             <!-- Example of property binding -->
