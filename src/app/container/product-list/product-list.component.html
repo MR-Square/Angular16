@@ -1,31 +1,7 @@
 <div class="ekart--products--container">
-    <!-- Example of structural directive -->
-    <div class="ekart--product--item" *ngFor="let prod of products">
-        <div class="ekart-wishlist-sale-container">
-            <div class="ekart--add--to--wishlist">
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
-            </div>
-            <!-- Example of structural directive(ngIf) -->
-            <div class="ekart-on-sale-tag" *ngIf="prod.discountPrice">{{ (100 - prod.discountPrice / prod.price *
-                100).toFixed(0) }}%
-                OFF
-            </div>
-        </div>
-        <div class="ekart--product--image">
-            <!-- Example of property binding -->
-            <img [src]="prod.imageURL" class="ekart--product--image" width="100">
-        </div>
-        <div class="ekart--add--to--price">
-            <!-- Example of string interpolation -->
-            {{ prod.price }}
-        </div>
-        <div class="ekart--product--name">{{ prod.name }}</div>
-        <div class="ekart--product--category">{{ prod.gender }} . {{ prod.category }} . {{ prod.brand }}</div>
-        <div class="ekart--product--available-colors">{{ prod.color.length }} Colors . Best Seller</div>
-        <!-- Example of attribute directive -->
-        <div class="ekart--product--in--stock"
-            [ngStyle]="{fontWeight: 'bold', color: prod.is_in_inventory ? 'green' : 'red'}">
-            {{ prod.is_in_inventory ? 'Available in stock' : 'Not available in stock' }}
-        </div>
-    </div>
+    <!-- Example of structural directive (ngFor) -->
+     <!-- Example of customer  property binding ([product]) -->
+    <app-product *ngFor="let prod of products" [product]="prod"></app-product>
 </div>
+
+<!-- We have shifted its code into product.component.html -->
