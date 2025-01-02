@@ -1,12 +1,12 @@
 <div class="ekart--search--product">
-    <!-- bad practice -->
+    <!-- bad practice --> <!-- property binding, event binding -->
     <!-- <input class="ekart-search-product-input" [value]="searchText" (input)="searchItem($event)"> -->
-    <!-- property binding, event binding -->
 
-    <!-- good practice -->
+    <!-- good practice --> <!-- two way data binding -->
     <input class="ekart-search-product-input" [(ngModel)]="searchText">
-    <!-- two way data binding -->
-    <button class="btn btn-search">Search</button>
+    <!-- Exmaple of attribute directive -->
+    <button [ngClass]="{'btn' : true,'btn-search': searchText,'btn-search-disabled' : !searchText}"
+        [disabled]="!searchText">Search</button>
 </div>
 <div class="ekart-search-result-for">
     <!-- Example of structural directive(ngIf) -->

@@ -2,6 +2,7 @@
   margin: 20px auto;
   text-align: center;
 }
+
 .ekart-search-product-input {
   width: 40%;
   height: 6.3vh;
@@ -16,11 +17,21 @@
   padding: 5px 10px;
   border: none;
 }
+
 .btn-search {
   padding: 12px 30px;
   background-color: #28282b;
   margin-left: -5px;
   color: #fff;
+}
+
+.btn-search-disabled {
+  padding: 11px 30px;
+  background-color: #aaa;
+  margin-left: -1px;
+  color: #999;
+  border: #aaa 1px solid;
+  cursor: no-drop;
 }
 
 .ekart-search-result-for {
