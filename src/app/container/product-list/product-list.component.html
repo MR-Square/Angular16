@@ -1,6 +1,8 @@
+<app-filter [all]="totalProductCount" [inStock]="totalProductInStock"
+    [outOfstock]="totalProductOutOfStock"></app-filter>
 <div class="ekart--products--container">
     <!-- Example of structural directive (ngFor) -->
-     <!-- Example of customer  property binding ([product]) -->
+    <!-- Example of customer  property binding ([product]) -->
     <app-product *ngFor="let prod of products" [product]="prod"></app-product>
 </div>
 
