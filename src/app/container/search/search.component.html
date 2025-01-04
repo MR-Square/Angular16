@@ -3,7 +3,7 @@
     <!-- <input class="ekart-search-product-input" [value]="searchText" (input)="searchItem($event)"> -->
 
     <!-- good practice --> <!-- two way data binding -->
-    <input class="ekart-search-product-input" [(ngModel)]="searchText">
+    <input class="ekart-search-product-input" [(ngModel)]="searchText" (input)="onSearchTextChanged()">
     <!-- Exmaple of attribute directive -->
     <button [ngClass]="{'btn' : true,'btn-search': searchText,'btn-search-disabled' : !searchText}"
         [disabled]="!searchText">Search</button>

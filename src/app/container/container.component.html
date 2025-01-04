@@ -24,12 +24,18 @@
     <!-- <span>{{ addToCart }}</span> -->
     <!-- <button (click)="addItemToCart()" [disabled]="(addToCart === product.inStock)">+</button> -->
 
-    <app-search></app-search>
+    <app-search (searchTextChanged)="setSearchText($event)" ></app-search>
 
     <!-- Example of ngFor structural directive -->
     <!-- <div *ngFor="let item of [1,2,3,4,5]">
         <p>Current element of array is : {{ item }}</p>
     </div> -->
 
-    <product-list></product-list>
+    <!-- Example of property binding -->
+    <!-- 
+        Here left one is product-list component's property
+        Right one is container componet's property
+        (sending data from container to product-list)
+    -->
+    <product-list [searchText]="searchText"></product-list>
 </div>
