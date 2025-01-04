@@ -5,15 +5,16 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [FormsModule, NgIf, NgClass],
+  imports: [FormsModule, NgIf],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',
 })
 export class SearchComponent {
   searchText: string = '';
 
-  searchItem(event: any) {
-    this.searchText = event.target.value;
+  updateSearchText(inputEl: HTMLInputElement) {
+    this.searchText = inputEl.value;
+    this.searchTextChanged.emit(this.searchText);
   }
 
   @Output()

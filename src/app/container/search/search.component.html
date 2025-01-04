@@ -3,12 +3,14 @@
     <!-- <input class="ekart-search-product-input" [value]="searchText" (input)="searchItem($event)"> -->
 
     <!-- good practice --> <!-- two way data binding -->
-    <input class="ekart-search-product-input" [(ngModel)]="searchText" (input)="onSearchTextChanged()">
+    <!-- <input class="ekart-search-product-input" [(ngModel)]="searchText" (input)="onSearchTextChanged()"> -->
+    <input class="ekart-search-product-input" #searchInput>
     <!-- Exmaple of attribute directive -->
-    <button [ngClass]="{'btn' : true,'btn-search': searchText,'btn-search-disabled' : !searchText}"
-        [disabled]="!searchText">Search</button>
+    <!-- <button [ngClass]="{'btn' : true,'btn-search': searchText,'btn-search-disabled' : !searchText}"
+        [disabled]="!searchText">Search</button> -->
+    <button class="btn btn-search" (click)="updateSearchText(searchInput) ">Search</button>
 </div>
-<div class="ekart-search-result-for">
+<div class=" ekart-search-result-for">
     <!-- Example of structural directive(ngIf) -->
     <p *ngIf="searchText">
         <strong>Search result for:</strong> {{ searchText }} <!-- string interpolation -->
