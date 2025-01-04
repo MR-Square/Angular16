@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductComponent } from './product/product.component';
 import { FilterComponent } from './filter/filter.component';
@@ -6,7 +6,7 @@ import { FilterComponent } from './filter/filter.component';
 @Component({
   selector: 'product-list',
   standalone: true,
-  imports: [NgFor, ProductComponent, FilterComponent],
+  imports: [NgFor, ProductComponent, FilterComponent, NgIf],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
@@ -611,4 +611,11 @@ export class ProductListComponent {
   totalProductOutOfStock = this.products.filter(
     (product) => product.is_in_inventory != true
   ).length;
+
+  selectedFilterRadioButton: string = 'all';
+
+  onFilterChanged(value: string) {
+    this.selectedFilterRadioButton = value;
+    console.log('onFilterChanged called!');
+  }
 }

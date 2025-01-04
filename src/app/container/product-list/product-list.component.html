@@ -1,9 +1,13 @@
-<app-filter [all]="totalProductCount" [inStock]="totalProductInStock"
-    [outOfstock]="totalProductOutOfStock"></app-filter>
+<app-filter [all]="totalProductCount" [inStock]="totalProductInStock" [outOfstock]="totalProductOutOfStock"
+    (selectedFilterRadioButtonChanged)="onFilterChanged($event)"></app-filter>
 <div class="ekart--products--container">
     <!-- Example of structural directive (ngFor) -->
-    <!-- Example of customer  property binding ([product]) -->
-    <app-product *ngFor="let prod of products" [product]="prod"></app-product>
+    <div *ngFor="let prod of products">
+        <!-- Example of custom property binding ([product]) -->
+        <!-- Exmaple of structural directive (ngIf) -->
+        <app-product [product]="prod"
+            *ngIf="selectedFilterRadioButton === 'all' || prod.is_in_inventory.toString() === selectedFilterRadioButton"></app-product>
+    </div>
 </div>
 
 <!-- We have shifted its code into product.component.html -->
