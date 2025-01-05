@@ -1,6 +1,6 @@
 import { NgIf, NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
-
+import { Product } from '../../../models/Product';
 @Component({
   selector: 'app-product',
   standalone: true,
@@ -10,20 +10,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductComponent {
   @Input()
-  product: {
-    id: number;
-    name: string;
-    description: string;
-    brand: string;
-    gender: string;
-    category: string;
-    size: number[];
-    color: string[];
-    price: number;
-    discountPrice?: number;
-    is_in_inventory: boolean;
-    items_left: number;
-    imageURL: string;
-    slug: string;
-  };
+  product: Product;
 }

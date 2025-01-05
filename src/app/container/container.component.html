@@ -24,7 +24,7 @@
     <!-- <span>{{ addToCart }}</span> -->
     <!-- <button (click)="addItemToCart()" [disabled]="(addToCart === product.inStock)">+</button> -->
 
-    <app-search (searchTextChanged)="setSearchText($event)" ></app-search>
+    <app-search (searchTextChanged)="setSearchText($event)"></app-search>
 
     <!-- Example of ngFor structural directive -->
     <!-- <div *ngFor="let item of [1,2,3,4,5]">
@@ -37,5 +37,7 @@
         Right one is container componet's property
         (sending data from container to product-list)
     -->
-    <product-list [searchText]="searchText"></product-list>
+    <product-list [searchText]="searchText" #productListComponent></product-list>
+    <product-detail *ngIf="productListComponent.selectedProduct">
+    </product-detail>
 </div>

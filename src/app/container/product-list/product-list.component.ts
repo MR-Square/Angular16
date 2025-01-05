@@ -2,6 +2,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ProductComponent } from './product/product.component';
 import { FilterComponent } from './filter/filter.component';
+import { Product } from '../../models/Product';
 
 @Component({
   selector: 'product-list',
@@ -621,4 +622,6 @@ export class ProductListComponent {
 
   @Input()
   searchText: string = '';
+
+  selectedProduct: Product;
 }
