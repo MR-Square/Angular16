@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { SearchComponent } from './search/search.component';
 import { NgIf } from '@angular/common';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -58,4 +58,7 @@ export class ContainerComponent {
   setSearchText(value: string) {
     this.searchText = value;
   }
+
+  @ViewChild(ProductListComponent)
+  productListComponent: ProductListComponent;
 }
